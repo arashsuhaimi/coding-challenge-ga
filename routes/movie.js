@@ -67,7 +67,7 @@ router.get("/details", async (req, res, next) => {
 router.get("/favorites", async (req, res, next) => {
   try {
   //get a list all the favorites movies
-  let resp = await axios.get('http://localhost:3000/favorites')
+  let resp = await axios.get('https://ga-coding-arashsuhaimi.herokuapp.com/favorites')
   console.log(resp);
   res.render("favorites", {
     resp: resp.data
