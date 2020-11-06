@@ -1,0 +1,89 @@
+
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+    
+    <!-- To display movie details -->
+    <div class="center">
+        <img src="<%= data.Poster %>"></img>
+    </div>
+    <table>
+        <tr>
+            <th>Name</th>
+            <td><%= data.Title %></td>
+        </tr>
+        <tr>
+            <th>Year</th>
+            <td><%= data.Year %></td>
+        </tr>
+        <tr>
+            <th>Ratings</th>
+            <td><%= data.Rated %></td>
+        </tr>
+        <tr>
+            <th>Release Date</th>
+            <td><%= data.Released %></td>
+        </tr>
+        <tr>
+            <th>Runtime</th>
+            <td><%= data.Runtime %></td>
+        </tr>
+        <tr>
+            <th>Genre</th>
+            <td><%= data.Genre %></td>
+        </tr>
+        <tr>
+            <th>Directors</th>
+            <td><%= data.Director %></td>
+        </tr>
+        <tr>
+            <th>Actors</th>
+            <td><%= data.Actors %></td>
+        </tr>
+        <tr>
+            <th>Writers</th>
+            <td><%= data.Writer %></td>
+        </tr>
+        <tr>
+            <th>Plot</th>
+            <td><%= data.Plot %></td>
+        </tr>
+        <tr>
+            <th>Language</th>
+            <td><%= data.Language %></td>
+        </tr>
+        <tr>
+            <th>Country</th>
+            <td><%= data.Country %></td>
+        </tr>
+        <tr>
+            <th>Awards</th>
+            <td><%= data.Awards %></td>
+        </tr>
+        <tr>
+            <th>Metascore</th>
+            <td><%= data.Metascore %></td>
+        </tr>
+        <tr>
+            <th>ImDbRating</th>
+            <td><%= data.imdbRating %></td>
+        </tr>
+        <tr>
+            <th>ID</th>
+            <td><%= data.imdbID %></td>
+        </tr>
+        <tr>
+            <th>ImdbVotes</th>
+            <td><%= data.imdbVotes %></td>
+        </tr>
+        <tr>
+            <th>Type</th>
+            <td><%= data.Type %></td>
+        </tr>
+        <tr>
+            <th>No. of Seasons</th>
+            <td><%= data.totalSeasons %></td>
+        </tr>
+    </table>
+
+    <div class="center">
+        <a href="/movie/search"><button type="submit">Back</button></a>
+    </div>

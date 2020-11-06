@@ -1,0 +1,77 @@
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<h3>Search your movies here</h3>
+<input id="movieinput" value="" placeholder="Search your movie" class="mb-10"/>
+
+<table>
+    <tr>
+        <th>Movie Name</th>
+        <th></th>
+    </tr>
+
+<!-- Loop all of the available movies based on search result -->
+<% results.forEach((result) => { %>
+    <tr>
+        <td><a href="/movie/details?imdbId=<%= result.imdbID %>"><%= result.Title %></a></td>
+        <td><button id="addtofavourite" onclick="addToFavorite('<%= result.imdbID %>', '<%= result.Title %>')">Add to favourite</button></td>
+    </tr>
+<% }) %>
+</table>
+
+<div class="center mb-10">
+    <button id="prev" type="submit">Prev</button>
+    <button id="Next" type="submit">Next</button>
+</div>
+
+<div class="center">
+    <a href="/movie/favorites"><button type="submit">My favourites</button></a>
+</div>
+<script>
+function addToFavorite(imdbId, title) {
+    console.log({oid:imdbId, name: title});
+    axios.post('/favorites', 
+        {oid:imdbId, name: title}
+    );
+}
+
+//To get data searched based on the keyword input
+let inputBox = document.getElementById('movieinput');
+        inputBox.onkeyup = function(e) {
+        if (e.key == "Enter") {
+            
+        let searchKeyword = inputBox.value;
+            window.location.href = `/movie/search?q=${searchKeyword}&p=1`
+        }
+        e.preventDefault();
+        };
+
+//Go to next page
+let pagenext = document.getElementById('Next');
+        pagenext.onclick = function(e) {
+            const urlParams = new URLSearchParams(window.location.search);
+            const currentmovie = urlParams.get('q');
+
+            let currentpage = urlParams.get('p');
+            
+            currentpage++;
+
+            window.location.href = `/movie/search?q=${currentmovie}&p=${currentpage}`
+        }
+
+//Go to prev page
+let pageprev = document.getElementById('prev');
+        pageprev.onclick = function(e) {
+            const urlParams = new URLSearchParams(window.location.search);
+            const currentmovie = urlParams.get('q');
+
+            let currentpage = urlParams.get('p');
+            
+            currentpage--;
+
+            window.location.href = `/movie/search?q=${currentmovie}&p=${currentpage}`
+        }
+        
+</script>
+
+

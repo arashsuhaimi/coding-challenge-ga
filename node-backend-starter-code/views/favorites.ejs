@@ -1,0 +1,17 @@
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+
+<h1>List of Favourite Movies</h1>
+<table>
+    <tr>
+        <th>Movie ID</th>
+        <th>Movie Name</th>
+    </tr>
+<% for(var i=0; i < resp.length; i++) { %>
+   <tr>
+     <td><%= resp[i].oid %></td>
+     <td><a href="/movie/details?imdbId=<%= resp[i].year %>"><%= resp[i].name %></a></td>
+     
+   </tr>
+<% } %>
+</table>
+h
