@@ -9,7 +9,7 @@
 <% for(var i=0; i < resp.length; i++) { %>
    <tr>
      <td><%= resp[i].oid %></td>
-     <td><a href="/movie/details?imdbId=<%= resp[i].year %>"><%= resp[i].name %></a></td>
+     <td><a href="/movie/details?imdbId=<%= resp[i].oid %>"><%= resp[i].name %></a></td>
      
    </tr>
 <% } %>
